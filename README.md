@@ -12,3 +12,5 @@ Upon loading the HTML webpage, the script populates the full table of UFO sighti
 Five search categories were constructed to filter the results. Upon executing a filter, first the table is cleared, and repopulated with the filtered results. The filter function is constructed in a way that field(s) can be left blank. 
 The shape filter was created using a dropdown box.
 Lastly, a "CLEAR" button was added that clears the entry fields without affecting the displayed table. 
+
+The webpage is now live https://azurblau82-coh.github.io/javascript-challenge/
