@@ -1,9 +1,15 @@
 // from data.js
 
 
-// YOUR CODE HERE!
+//first, clear out table if there is one
+var obj = document.getElementById('body');
+var rows = obj.rows;
+console.log(rows.length);
+while (rows.length != 0){
+  obj.deleteRow(0)
+}
 
-//Populate the table
+//define data
 var tableData = data;
 //select table body
 var tbody = d3.select("tbody");
@@ -134,6 +140,6 @@ function runClear(){
     d3.select("#country").property("value", "");
     d3.select("#state").property("value", "");
     d3.select("#city").property("value", "");
-    d3.select("#shape").property("value", "");
+    d3.select("#inputGroupSelect01").property("value", "");
     console.log("Clicked Clear")
 }
