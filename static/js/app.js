@@ -66,12 +66,19 @@ function runEnter() {
     var inputValue3 = inputElement3.property("value");
     var inputValue4 = inputElement4.property("value");
     
+    //Date.parse helps to compare non-exact matches -> 1/1/2010 = 01/01/2010
+    var datefilter = Date.parse(inputValue);
+    //making state entries lower case (case insensitive for search purposes)
+    var countrylower = inputValue1.toLowerCase();
+    var statelower = inputValue2.toLowerCase();
+    var citylower = inputValue3.toLowerCase();
 
-    // log out the inputvalues to see if they were read in correctly
+    // log out the inputvalues to see if they were read in and converted correctly
+    console.log(datefilter)
     console.log(inputValue)
-    console.log(inputValue1)
-    console.log(inputValue2)
-    console.log(inputValue3)
+    console.log(countrylower)
+    console.log(statelower)
+    console.log(citylower)
     console.log(inputValue4)
     
     
@@ -80,22 +87,24 @@ function runEnter() {
     //one at a time, if entry is not nothing -> filter
     //if entry is empty, skip over (else{}), except for the first one, we need to define Sigthings variable
     if(inputValue != ""){
-        var Sightings = tableData.filter(y => y.datetime === inputValue)
+        var Sightings = tableData.filter(y => Date.parse(y.datetime) === datefilter)
     }
     else {Sightings = tableData}
     
     if(inputValue1 != ""){
-        Sightings = Sightings.filter(y => y.country === inputValue1)
+        Sightings = Sightings.filter(y => y.country === countrylower)
     }
     else{}
     
     if(inputValue2 != ""){
-        Sightings = Sightings.filter(y => y.state === inputValue2)
+        Sightings = Sightings.filter(y => y.state === statelower)
     }
     else{}
     
     if(inputValue3 != ""){
-        Sightings = Sightings.filter(y => y.city === inputValue3)
+        Sightings = Sightings.filter(y => y.city.includes(citylower))
+        // the .includes() function helps with partial matches.
+        //for instance 'cajon' will return matches for 'el cajon'
     }
     else{}
     
