@@ -2,9 +2,9 @@
 
 Both Levels 1 (required) and 2 (optional) have been completed in this homework.
 
-The index.html file contains the code for the webpage with customization.
+In the "static" folder: The app.js file holds the code to populate the table, create the Date Search and set multiple filters and search for UFO sightings.
 
-The app.js file holds the code to populate the table, create the Date Search and set multiple filters and search for UFO sightings.
+The index.html file contains the code for the webpage with customization.
 
 Note: Comments were added in the js code to indicate several special features added to the webpage. These include:
 
